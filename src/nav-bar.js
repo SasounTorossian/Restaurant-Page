@@ -4,14 +4,22 @@ const renderNavBar = () => {
     const navBar = document.createElement("div")
     navBar.id = "nav-bar"
 
-    const navBarImage = document.createElement("div")
-    navBarImage.id = "nav-bar-image"
-    const navBarImageImg = document.createElement("img")
-    navBarImageImg.src = "./images/Sand Dune.png"
-    navBarImageImg.height = "80"
-    navBarImageImg.classList.add("tab-button")
-    navBarImage.appendChild(navBarImageImg)
-    navBar.appendChild(navBarImage)
+    const navBarLogo = document.createElement("div")
+    navBarLogo.id = "nav-bar-logo"
+    const navBarLogoImg = document.createElement("img")
+    navBarLogoImg.src = "./images/images-nav-bar/logo.png"
+    navBarLogoImg.height = "60"
+    navBarLogoImg.classList.add("logo-img")
+    navBarLogo.appendChild(navBarLogoImg)
+
+    const navBarLogoTitle = document.createElement("h2")
+    navBarLogoTitle.textContent = "le Désert Aride"
+    navBarLogoTitle.classList.add("logo-title")
+    navBarLogo.appendChild(navBarLogoTitle)
+
+    navBar.appendChild(navBarLogo)
+
+
 
     const homeTab = document.createElement("div")
     homeTab.id = "home-tab"
@@ -44,7 +52,7 @@ const renderNavBar = () => {
     gitTab.id = "git-tab"
     gitTab.classList.add("tab")
     const gitTabImg = document.createElement("img")
-    gitTabImg.src = "./images/Github Logo.png"
+    gitTabImg.src = "./images/images-nav-bar/Github Logo.png"
     gitTabImg.height = "60"
     gitTabImg.classList.add("tab-button")
     gitTab.appendChild(gitTabImg)
