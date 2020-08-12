@@ -1,4 +1,5 @@
 import {renderNavBar} from "./nav-bar.js"
-// import {rederHomePage} from "./home.js"
+import {renderHomePage} from "./home.js"
 
 renderNavBar()
+renderHomePage()
