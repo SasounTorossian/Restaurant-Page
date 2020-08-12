@@ -9,7 +9,7 @@ const renderHomePage = () => {
 
     const span1 = document.createElement("span")
     span1.classList.add("border")
-    span1.textContent = "Welcome the Sands of Luxury"
+    span1.textContent = "Welcome to the Sands of Luxury"
     
     ptext1.appendChild(span1)
     pimg1.appendChild(ptext1)
