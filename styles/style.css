@@ -45,6 +45,7 @@ body, html, #content {
 }
 
 .tab {
+    cursor: pointer;
     transition: 0.2s ease-in;
 }
 
@@ -61,6 +62,7 @@ body, html, #content {
 }
 
 .tab-button {
+    cursor: pointer;
     color: black;
     background: none;
     border: none;
