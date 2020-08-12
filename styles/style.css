@@ -141,3 +141,15 @@ h2 {
         background-attachment: scroll;
     }
 }
+
+/* FOOTER */
+.footer {
+    background: #f4f4f4;
+    padding: 10px;
+  }
+  
+  .footer p {
+    font-weight: 500;
+    font-size: 25px;
+    text-align: center;
+  }
