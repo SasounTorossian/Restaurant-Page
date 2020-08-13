@@ -29,7 +29,7 @@ body, html, #content {
 .logo-title {
     display: block;
     text-align: center;
-    font-size: 30px;
+    font-size: 28px;
 }
 
 #nav-bar-logo, #home-tab, #menu-tab, #contact-tab {
@@ -45,34 +45,36 @@ body, html, #content {
 }
 
 .tab {
+    display: flex;
     cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    letter-spacing: 8px;
     transition: 0.2s ease-in;
 }
 
 .tab:hover{
-    /* background: rgba(0,0,0,0.25); */
-    /* background: rgba(255, 255, 255, 0.75); */
     background: rgba(240,174,33, 1);
 }
 
-.tab:hover > .tab-button{
-    /* background: rgba(0,0,0,0.25); */
-    /* background: rgba(255, 255, 255, 0.75); */
-    /* transform: scale(1.1); */
+#git-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
 }
 
-.tab-button {
-    cursor: pointer;
-    color: black;
-    background: none;
-    border: none;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 21px;
-    letter-spacing: 8px;
-    transition: 0.2s ease-in;
+#git-link:hover > #git-img {
+    transform: scale(1.1);
+}
+
+#git-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease-in
 }
 
 /* HOMEPAGE */
