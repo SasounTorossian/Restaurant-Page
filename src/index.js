@@ -4,5 +4,13 @@ import {renderFooter} from "./footer.js"
 
 
 renderNavBar()
-renderHomePage()
+// renderHomePage()
 renderFooter()
+
+const tabs = document.querySelectorAll(".tab")
+tabs.forEach(tab => {
+    tab.addEventListener('click', (e) => {
+        console.log(e.target)
+    })
+})
+
