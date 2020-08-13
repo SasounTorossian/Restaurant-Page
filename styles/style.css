@@ -4,9 +4,12 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-body, html, #content {
+body, html{
     height: 100%;
 }
+
+/* CONTENT */
+
 
 /* NAV BAR */
 #nav-bar {
@@ -78,29 +81,17 @@ body, html, #content {
 }
 
 /* HOMEPAGE */
+#home-page {
+    height: 100%;
+}
+
 .pimg1, .pimg2, .pimg3 {
     position: relative;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
     background-attachment: fixed;
-}
-
-
-.pimg1 {
-    background-image:url("../images/images-home-page/desert-dunes-lake-blue-sky-hot-day-1920x1080_898588-mm-90.jpg");
-    min-height: 100%;
-}
-
-.pimg2 {
-    background-image:url("../images/images-home-page/desert_dunes_sand_141784_1920x1080.jpg");
-    min-height: 600px;
-}
-
-.pimg3 {
-    background-image:url("../images/images-home-page/Sand-dunes-Sahara-Morocco-Merzouga.jpg");
-    min-height: 600px;
+    height: 600px;
 }
 
 h2 {
@@ -147,12 +138,12 @@ h2 {
 }
 
 /* FOOTER */
-.footer {
+#footer {
     background: #f4f4f4;
     padding: 10px;
   }
   
-  .footer p {
+#footer p {
     font-weight: 500;
     font-size: 25px;
     text-align: center;
