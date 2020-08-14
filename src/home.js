@@ -1,8 +1,10 @@
 const content = document.getElementById("content")
-const homePage = document.createElement("div")
-homePage.id = "home-page"
 
 const renderHomePage = () => {
+    const homePage = document.createElement("div")
+    homePage.id = "home-page"
+    homePage.classList.add("current-page")
+
     // First section
     const pimg1 = document.createElement("div")
     pimg1.classList.add("pimg1")
@@ -100,7 +102,6 @@ const renderHomePage = () => {
     homePage.appendChild(section3)
 
     content.appendChild(homePage)
-
 }
 
 export {
