@@ -41,7 +41,7 @@ const renderNavBar = () => {
 
     const gitTab = document.createElement("div")
     gitTab.id = "git-tab"
-    gitTab.classList.add("tab")
+    // gitTab.classList.add("tab")
     const gitTabLink = document.createElement("a")
     gitTabLink.id = "git-link"
     gitTabLink.href = "https://github.com/SasounTorossian"

@@ -45,6 +45,16 @@ body, html{
 
 #git-tab {
     flex: 1;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+}
+
+#git-tab:hover {
+    background: rgba(240,174,33, 1);
+}
+
+#git-link:hover > #git-img {
+    transform: scale(1.1);
 }
 
 .tab {
@@ -69,9 +79,7 @@ body, html{
     width: 100%;
 }
 
-#git-link:hover > #git-img {
-    transform: scale(1.1);
-}
+
 
 #git-img {
     display: flex;

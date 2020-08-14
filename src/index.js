@@ -5,7 +5,7 @@ import {renderContactPage} from "./contact.js"
 import {renderFooter} from "./footer.js"
 
 
-let parallaxMirrorNodeList
+
 
 renderNavBar()
 renderHomePage()
@@ -13,62 +13,46 @@ renderFooter()
 
 const content = document.getElementById("content")
 
-
-const clearPage = ( ) => {
-
-}
-
 const tabs = document.querySelectorAll(".tab")
 tabs.forEach(tab => {
     tab.addEventListener('click', (e) => {
         const selectedTab = e.target.id
     
-        saveAndLoadParallax(selectedTab)
-        const currentPage = document.querySelector(".current-page")
-        const footer = document.getElementById("footer")
+        parSaveLoad(selectedTab)
+
+        content.removeChild(document.querySelector(".current-page"))
+        content.removeChild(document.getElementById("footer"))
         
-        if(selectedTab == "home-tab") {
-            console.log(currentPage)
-            content.removeChild(currentPage)
-            content.removeChild(footer)
-            renderHomePage()
-            renderFooter()
-        }
-        else if(selectedTab == "menu-tab") {
-            console.log(currentPage)
-            content.removeChild(currentPage)
-            content.removeChild(footer)
-            renderMenuPage()
-            renderFooter()
-        }
-        else if(selectedTab == "contact-tab") {
-            content.removeChild(currentPage)
-            content.removeChild(footer)
-            renderContactPage()
-            renderFooter()
-        }
+        if(selectedTab == "home-tab") renderHomePage()
+        else if(selectedTab == "menu-tab") renderMenuPage()
+        else if(selectedTab == "contact-tab") renderContactPage()
+
+        renderFooter()
     })
 })
 
-function saveAndLoadParallax(selectedTab) {
+// parallax.js library created parallax-mirror element for each
+// parallax image. These are appended to start of body tag and track
+// position of scroll wheel to produce parallax effect in images.
+function parSaveLoad(selectedTab) {
     // Parallax saving and loading code.
     const body = document.querySelector("body")
+    let parList = document.querySelectorAll(".parallax-mirror")
 
-    let parallaxMirrorElems = Array.from(document.querySelectorAll(".parallax-mirror"))
+    // Initialize static variable to retain variable state between calls
+    if(typeof parSaveLoad.parSaved == "undefined") parSaveLoad.parSaved = 0
 
-    if(parallaxMirrorElems.length != 0 && 
+    // If not home-tab, save list in parSaved variable and remove parallax elements
+    // If home-tab, load list and prepend them to beginning of body
+    if(parList.length != 0 && 
         selectedTab != "home-tab") {
-        parallaxMirrorNodeList = parallaxMirrorElems
-        parallaxMirrorElems.forEach(parallaxMirror => {
-            parallaxMirror.remove()
-        })
+        parSaveLoad.parSaved = parList
+        parList.forEach(p => p.remove())
     }
-    else if (parallaxMirrorElems.length == 0 &&
+    else if (parList.length == 0 &&
         selectedTab == "home-tab") {
-        parallaxMirrorElems = parallaxMirrorNodeList
-        parallaxMirrorElems.forEach(pElem => {
-            body.prepend(pElem)
-        })
+        parList = parSaveLoad.parSaved
+        parList.forEach(p => body.prepend(p))
     }
 }
 
