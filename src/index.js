@@ -4,11 +4,9 @@ import {renderMenuPage} from "./menu.js"
 import {renderContactPage} from "./contact.js"
 import {renderFooter} from "./footer.js"
 
-
-
-
 renderNavBar()
 renderHomePage()
+// renderMenuPage()
 renderFooter()
 
 const content = document.getElementById("content")
