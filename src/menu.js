@@ -3,43 +3,74 @@ const content = document.getElementById("content")
 let menu = {
     starters: [
         {
-            "name": "beetle",
-            "ing": "A delicious beetle, sauteed in brine and urine",
-            "price": "20"
+            "name": "Cactus salad Ⓥ",
+            "ing": "A salad made from the succulent pads of the prickly pear, sword pear, and saguaro. Served with a sweet chilli marinade",
+            "price": "7"
         },
         {
-            "name": "dragonfly",
-            "ing": "A delicious dragonfly, sauteed in brine and urine",
-            "price": "30"
+            "name": "Toasty Arizona desert hairy scorpion",
+            "ing": "Three large hadrurus arizonensis scorpions harvested from the Mojave Desert toasted until golden brown, served with a small side of desert turf grass.",
+            "price": "8"
+        },
+        {
+            "name": "Regal horned lizard barbeque",
+            "ing": "One large phrynosoma solare marinated for 24 hours in aloe vera paste, barbequed until crispy.",
+            "price": "10"
+        },
+        {
+            "name": "Namib Desert beetle fry-up",
+            "ing": "100g of the finest stenocara gracilipes beetles captured from the Namib Desert, fried in palm oil and served sizzling.",
+            "price": "12"
         }
     ],
 
     mains: [
         {
-            "name": "Desert Shrub",
-            "ing": "A lovely desert shrub soaked in vanilla extract served with beetle legs.",
-            "price": "50"
+            "name": "Date jam served with pita Ⓥ",
+            "ing": "A jam made with ripe dates and served with 2 large freshly made pitas.",
+            "price": "12"
         },
         {
-            "name": "Mongolian camel BBQ",
-            "ing": "Mongolian camel thighs straight from the Gobi desert, marinated and grilled over a fire. Served with camel cheese on the side.",
-            "price": "60"
-        }
+            "name": "Mesquite soup Ⓥ",
+            "ing": "Out finest mesquite seeds cooked in desert water and served with olive oil and a slice of lemon.",
+            "price": "12"
+        },
+
+        {
+            "name": "Bactrian camel Kabsa",
+            "ing": "A 250g cut of Camelus bactrianus loin imported from the Gobi Desert, marinated in spices and grilled over a fire. Served with 350g of rice.",
+            "price": "20"
+        },
+        {
+            "name": "Nile crocodile stew",
+            "ing": "A stew made with the tender flesh of a captured crocodylus niloticus crocodile from the Nile River. Cooked with plenty of salt, herbs, and spices. A procession will be held after the meal for those who were killed while capturing the crocodile (RIP  Ahmed).",
+            "price": "35"
+        },
     ],
 
-    drinks: [
+    desserts: [
         {
-            "name": "Oasis water",
-            "ing": "1L of our finest oasis water, filled with minerals and natural flavour",
-            "price": "5"
+            "name": "Wolfberry soufflé Ⓥ",
+            "ing": "A sublime soufflé made using freshly harvested and imported Lycium exsertum berries straight from the lower Sonora Desert.",
+            "price": "12"
         },
         {
-            "name": "Camel milk",
-            "ing": "A 770ml bottle of the finest camel milk, milked fresh every day.",
-            "price": "10"
+            "name": "Tequila chocolate truffles Ⓥ",
+            "ing": "Decadent chocolate truffles made using fresh tequila pressed in-house from newly harvested agave.",
+            "price": "14"
+        },
+        {
+            "name": "Dromedary camel yoghurt Ⓥ",
+            "ing": "A cool yoghurt made from freshly squeezed camel milk. Served with cucumbers and parsley.",
+            "price": "14"
+        },
+        {
+            "name": "Vanilla ice cream served with jewel scarabs",
+            "ing": "150g of freshly made vanilla ice cream topped with ruteline genus chrysina golden scarabs for zest and beauty.",
+            "price": "15"
         }
-    ]
 
+    ],
 }
 
 const renderMenuPage = () => {
