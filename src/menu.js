@@ -73,11 +73,27 @@ let menu = {
     ],
 }
 
+/*
+DOM representaiton of menu structure:
+
+menu-page
+    |->menu-type
+        |-> menu_header 
+        |-> menu-item
+            |-> menu-desc
+            |   |-> menu-name      
+            |   |-> menu-ing
+            |-----> menu-price
+*/
+
 const renderMenuPage = () => {
+    const currentTab = document.querySelector(".current-tab")
+    if (currentTab != null) currentTab.classList.remove("current-tab")
+    document.getElementById("menu-tab").classList.add("current-tab")
+
     const menuPage = document.createElement("div")
     menuPage.id = "menu-page"
     menuPage.classList.add("current-page")
-    // menuPage.style.background = "url('images/images-menu-page/menu-desert.jpg')"
 
     for (let type in menu) {
         let typeUppercase = type.charAt(0).toUpperCase() + type.slice(1)

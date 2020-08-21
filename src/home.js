@@ -1,6 +1,11 @@
 const content = document.getElementById("content")
 
 const renderHomePage = () => {
+    const currentTab = document.querySelector(".current-tab")
+    if (currentTab != null) currentTab.classList.remove("current-tab")
+    document.getElementById("home-tab").classList.add("current-tab")
+
+
     const homePage = document.createElement("div")
     homePage.id = "home-page"
     homePage.classList.add("current-page")
