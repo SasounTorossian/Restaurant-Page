@@ -5,8 +5,8 @@ import {renderContactPage} from "./contact.js"
 import {renderFooter} from "./footer.js"
 
 renderNavBar()
-renderHomePage()
-// renderMenuPage()
+// renderHomePage()
+renderMenuPage()
 renderFooter()
 
 const content = document.getElementById("content")
@@ -42,13 +42,11 @@ function parSaveLoad(selectedTab) {
 
     // If not home-tab, save list in parSaved variable and remove parallax elements
     // If home-tab, load list and prepend them to beginning of body
-    if(parList.length != 0 && 
-        selectedTab != "home-tab") {
+    if(parList.length != 0 && selectedTab != "home-tab") {
         parSaveLoad.parSaved = parList
         parList.forEach(p => p.remove())
     }
-    else if (parList.length == 0 &&
-        selectedTab == "home-tab") {
+    else if (parList.length == 0 && selectedTab == "home-tab") {
         parList = parSaveLoad.parSaved
         parList.forEach(p => body.prepend(p))
     }

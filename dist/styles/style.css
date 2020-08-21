@@ -160,13 +160,13 @@ h2 {
 
 .menu-header {
     text-align: center;
-    font-size: 20px;
+    font-size: 22px;
     text-decoration: underline;
 }
 
 .menu-item {
     display: flex;
-    margin: 15px;
+    margin: 20px;
 }
 
 .menu-desc {
@@ -174,16 +174,18 @@ h2 {
 }
 
 .menu-name {
-    font-size: 18px;
+    font-size: 19px;
     margin-bottom: 5px;
 }
 
 .menu-ing {
+    font-size: 17px;
     color: gray;
 }
 
 .menu-price {
-    margin: 15px;
+    font-size: 18px;
+    margin: 20px;
 }
 
 /* FOOTER */
