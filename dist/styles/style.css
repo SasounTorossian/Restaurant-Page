@@ -8,6 +8,10 @@ body, html {
     height: 100%;
 }
 
+body {
+    overflow-y: overlay;
+}
+
 /* CONTENT */
 #content {
     display: flex;
@@ -43,10 +47,6 @@ body, html {
 
 #nav-bar-logo, #home-tab, #menu-tab, #contact-tab {
     flex: 1;
-}
-
-#contact-tab {
-    margin-right: 200px;
 }
 
 #git-tab {

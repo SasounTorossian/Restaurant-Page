@@ -5,8 +5,8 @@ import {renderContactPage} from "./contact.js"
 import {renderFooter} from "./footer.js"
 
 renderNavBar()
-// renderHomePage()
-renderMenuPage()
+renderHomePage()
+// renderMenuPage()
 renderFooter()
 
 const content = document.getElementById("content")
@@ -15,15 +15,15 @@ const tabs = document.querySelectorAll(".tab")
 tabs.forEach(tab => {
     tab.addEventListener('click', (e) => {
         const selectedTab = e.target.id
-    
-        parSaveLoad(selectedTab)
-
+        
         content.removeChild(document.querySelector(".current-page"))
         content.removeChild(document.getElementById("footer"))
         
         if(selectedTab == "home-tab") renderHomePage()
         else if(selectedTab == "menu-tab") renderMenuPage()
         else if(selectedTab == "contact-tab") renderContactPage()
+
+        parSaveLoad(selectedTab)
 
         renderFooter()
     })
