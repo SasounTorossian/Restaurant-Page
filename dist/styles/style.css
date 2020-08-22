@@ -194,6 +194,12 @@ h2 {
     margin-left: 30px;
 }
 
+/* CONTACT PAGE */
+#contact-page {
+    display: flex;
+    justify-content: space-around;
+}
+
 /* FOOTER */
 #footer {
     background: #f4f4f4;
