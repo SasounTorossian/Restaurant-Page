@@ -16,35 +16,67 @@
     <div id="contact-page">
         <div id="contact-details">
             <div id="contact-info">
-                <div id="contact-address">
-                    <p>Address: 123 balls street</p>
+                <div id="contact-address" class="contact-info-mem">
+                    <strong>Addresses:</strong>
+                    <p>Saharah Desert</p>
+                    <p>Gobi Desert</p>
+                    <p>Mojave  Desert</p>
+                    <p>Namib Desert</p>
+                    <p>Patagonian Desert</p>
+                    <p>Arabian Desert</p>
+                    <p>Great Victoria Desert</p>
                 </div>
-                <div id="contact-times">
-                    <p>Opening-times: 12:00 - 22:00</p>
+                <div id="contact-times" class="contact-info-mem">
+                    <strong>Opening-times:</strong>
+                    <p>Mon-Sat, 12:00 - 22:00</p>
                 </div>
-                <div id="contact-tel">
-                    <p>Telephone: 123456789</p>
+                <div id="contact-tel" class="contact-info-mem">
+                    <strong>Telephone:</strong>
+                    <p>123456789</p>
                 </div>
             </div>
-            <div id="contact-form">
-                <form>
-                    <label for="name">Name:</label><br>
-                    <input type="text" id="name" name="name"><br>
+            <form id="contact-form">
+                <strong>Contact Us</strong>
 
-                    <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email"><br>
+                <div class="form-div">
+                    <div class="inputBox">
+                        <input type="text" required="required" autocomplete="nope"> 
+                        <span class="text">Name</span>
+                        <span class="line"></span>
+                    </div>
+                </div>
 
-                    <label for="phone">Phone:</label><br>
-                    <input type="tel" id="phone" name="phone"><br>
+                <div class="form-div">
+                    <div class="inputBox">
+                        <input type="text" required="required" autocomplete="nope"> 
+                        <span class="text">Email</span>
+                        <span class="line"></span>
+                    </div>
+                </div>
 
-                    <label for="message">Message:</label><br>
-                    <input type="text" id="message" name="message"><br>
+                <div class="form-div">
+                    <div class="inputBox">
+                        <input type="text" required="required" autocomplete="nope"> 
+                        <span class="text">Mobile</span>
+                        <span class="line"></span>
+                    </div>
+                </div>
 
-                    <input type="submit" value="Send Message">
-                </form>
-            </div>
+                <div class="form-div">
+                    <div class="inputBox textarea">
+                        <textarea required="required" autocomplete="nope"></textarea>
+                        <span class="text">Message</span>
+                        <span class="line"></span>
+                    </div>
+                </div>
+
+                <div class="form-div">
+                    <input type="submit" value="Send">
+                </div>
+            </form>
         </div>
-        <div id="contact-map" style="width:600px;height:600px;">
+
+        <div id="contact-map" style="width:500px; height:500px;">
             <script>
                 function myMap() {
                     let deserts = [
@@ -118,6 +150,7 @@
                                      'and it is believed to support an additional 1,750 to 2,000 species of plants. ' + 
                                      'The central part of the desert is sparsely populated, ' +
                                      'while its peripheries support large communities such as Las Vegas, Barstow, Lancaster, Palmdale, Victorville, and St. George.</p>' +
+                                     '<br>' +
                                 '<p>Attribution: <a href="https://en.wikipedia.org/wiki/Mojave_Desert">Mojave Desert</a>' +
                                 '(last visited August 22, 2020).</p>' + 
                             '</div> '
