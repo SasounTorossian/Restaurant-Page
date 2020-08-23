@@ -8,7 +8,7 @@ let menu = {
             "price": "7"
         },
         {
-            "name": "Toasty Arizona desert hairy scorpion",
+            "name": "Toasted Arizona desert hairy scorpion",
             "ing": "Three large hadrurus arizonensis scorpions harvested from the Mojave Desert toasted until golden brown, served with a small side of desert turf grass.",
             "price": "8"
         },

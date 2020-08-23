@@ -5,7 +5,7 @@ import {renderContactPage} from "./contact.js"
 import {renderFooter} from "./footer.js"
 
 renderNavBar()
-// renderHomePage()
+renderHomePage()
 // renderContactPage()
 renderFooter()
 

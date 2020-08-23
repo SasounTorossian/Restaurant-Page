@@ -202,14 +202,16 @@ h2 {
 }
 
 #contact-details {
-    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    width: 600px;
 }
 
-.contact-info-mem {
+.contact {
     margin-bottom: 10px;
 }
 
-.contact-info-mem p{
+.contact p{
     margin-left: 10px;
 }
 
@@ -219,7 +221,7 @@ h2 {
 
 #contact-form  {
     position: relative;
-    width: 100%;
+    width: 50%;
 }
 
 #contact-form .form-div {
@@ -318,6 +320,8 @@ input[type="submit"] {
 
 #contact-map {
     border: 5px solid rgba(240,174,33, 1);
+    width: 700px; 
+    height: 500px;
 }
 
 /* FOOTER */
