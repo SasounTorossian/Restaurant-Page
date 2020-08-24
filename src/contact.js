@@ -312,15 +312,9 @@ const renderContactPage = () => {
     // MAP
     const mapDiv = document.createElement("div")
     mapDiv.id = "contact-map"
-    let url = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBgXyqkZVXE515nBZW12GKBFkf4vEa4-xg&callback=myMap"
 
-    
-    // if(!isGoogleMapScriptLoaded(url)) {
-    let script = document.createElement('script');
-    script.src = url
-    script.defer = true
-    document.head.appendChild(script)
-    // }
+    removeGoogleMapScript()
+    addGoogleMapScript()
 
     window.myMap = function() {
         let mapProp= {
@@ -357,16 +351,43 @@ const renderContactPage = () => {
     requestAnimationFrame(() => contactPage.classList.remove("screen-hidden"))
 }
 
-// function isGoogleMapScriptLoaded(url) {
-//     let loadedScripts = document.querySelectorAll("script")
-//     loadedScripts.forEach(script => {
-//         console.log(script.src)
-//         console.log(url)
+function isGoogleMapScriptLoaded(url) {
+    let loadedScripts = document.querySelectorAll("script")
 
-//         if (script.src == url) return true
-//     })
-//     return false
-// }
+    for (let i = loadedScripts.length; i--;) {
+        if (loadedScripts[i].src === url) {
+            loadedScripts[i].parentNode.removeChild(loadedScripts[i])
+            // return true
+        }
+    }
+    // return false
+}
+
+function removeGoogleMapScript() {
+    let keywords = ['maps.googleapis']
+
+    //Remove google from BOM (window object)
+    window.google = undefined
+
+    //Remove google map scripts from DOM
+    let scripts = document.head.getElementsByTagName("script")
+    for (let i = scripts.length - 1; i >= 0; i--) {
+        let scriptSource = scripts[i].getAttribute('src')
+        if (scriptSource != null) {
+            if (keywords.filter(item => scriptSource.includes(item)).length) {
+                scripts[i].remove()
+            }
+        }
+    }
+}
+
+function addGoogleMapScript() {
+    let url = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBgXyqkZVXE515nBZW12GKBFkf4vEa4-xg&callback=myMap"
+    let script = document.createElement('script');
+    script.src = url
+    script.defer = true
+    document.head.appendChild(script)
+}
 
 export {
     renderContactPage
