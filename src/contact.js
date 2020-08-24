@@ -194,7 +194,7 @@ const renderContactPage = () => {
     const contactAddr = document.createElement("div")
     contactAddr.classList.add("contact")
     const strongAddr = document.createElement("strong")
-    strongAddr.textContent = "Addresses:"
+    strongAddr.textContent = "Locations:"
     contactAddr.appendChild(strongAddr)
     addresses.forEach(address => {
         const add = document.createElement("p")
@@ -206,12 +206,25 @@ const renderContactPage = () => {
     const contactTime = document.createElement("div")
     contactTime.classList.add("contact")
     const strongTime = document.createElement("strong")
-    strongTime.textContent = "Opening-times:"
+    strongTime.textContent = "Opening-Times:"
     contactTime.appendChild(strongTime)
-    const time = document.createElement("p")
-    time.textContent = "Mon-Sat, 12:00 - 22:00"  
-    contactTime.appendChild(time)
+    const time_1 = document.createElement("p")
+    time_1.textContent = "Lunch: 11:30am - 2:30pm"  
+    contactTime.appendChild(time_1)
+    const time_2 = document.createElement("p")
+    time_2.textContent = "Dinner, 5:30pm - 11:00pm"  
+    contactTime.appendChild(time_2)
     contactInfo.appendChild(contactTime)
+
+    const contactEmail = document.createElement("div")
+    contactEmail.classList.add("contact")
+    const strongEmail = document.createElement("strong")
+    strongEmail.textContent = "Email:"
+    contactEmail.appendChild(strongEmail)
+    const Email = document.createElement("p")
+    Email.textContent = "leDesertAride@gmail.com"  
+    contactEmail.appendChild(Email)
+    contactInfo.appendChild(contactEmail)
 
 
     const contactTel = document.createElement("div")
@@ -282,10 +295,16 @@ const renderContactPage = () => {
     const formDivSub = document.createElement("form")
     formDivSub.classList.add("form-div")
     const inputSub = document.createElement("input")
-    inputSub.setAttribute("type", "submit");
+    inputSub.setAttribute("type", "button");
     inputSub.setAttribute("value", "Send");
     formDivSub.appendChild(inputSub)
     form.appendChild(formDivSub)
+
+    inputSub.addEventListener('click', (e) => {
+        let frm = document.querySelector("#contact-form")
+        frm.reset()
+        return false
+    })
 
     contactDetails.appendChild(form)
 

@@ -180,6 +180,7 @@ h2 {
 }
 
 .menu-name {
+    color: rgba(240,174,33, 1);
     font-size: 20px;
     margin-bottom: 5px;
 }
@@ -187,6 +188,7 @@ h2 {
 .menu-ing {
     font-size: 17px;
     color: gray;
+    font-style: italic;
 }
 
 .menu-price {
@@ -196,6 +198,7 @@ h2 {
 
 /* CONTACT PAGE */
 #contact-page {
+    height: 100%;
     display: flex;
     justify-content: space-around;
     margin: 20px;
@@ -204,14 +207,19 @@ h2 {
 #contact-details {
     display: flex;
     justify-content: space-around;
-    width: 600px;
+    width: 50%;
 }
 
 .contact {
-    margin-bottom: 10px;
+    margin-bottom: 34px;
+}
+
+.contact strong{
+    font-size: 20px;
 }
 
 .contact p{
+    font-size: 18px;
     margin-left: 10px;
 }
 
@@ -221,6 +229,11 @@ h2 {
 
 #contact-form  {
     position: relative;
+    width: 50%;
+}
+
+#contact-form  strong{
+    font-size: 20px;
     width: 50%;
 }
 
@@ -294,6 +307,7 @@ h2 {
 
 #contact-form .inputBox.textarea textarea {
     height: 100%;
+    margin-top: 5px;
     resize: none;
 }
 
@@ -308,14 +322,15 @@ h2 {
     height: 100%;
 }
 
-input[type="submit"] {
+input[type="button"] {
+    width: 100%;
     border: none;
     padding: 7px 35px;
     cursor: pointer;
     outline: none;
     background: rgba(240,174,33, 1);
     color: #000;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 #contact-map {
