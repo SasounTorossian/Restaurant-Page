@@ -179,6 +179,7 @@ const renderContactPage = () => {
     if (currentTab != null) currentTab.classList.remove("current-tab")
     document.getElementById("contact-tab").classList.add("current-tab")
 
+    if(document.querySelector(".current-page") != null) return
     const contactPage = document.createElement("div")
     contactPage.id = "contact-page"
     contactPage.classList.add("current-page")

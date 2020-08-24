@@ -5,7 +5,7 @@ const renderHomePage = () => {
     if (currentTab != null) currentTab.classList.remove("current-tab")
     document.getElementById("home-tab").classList.add("current-tab")
 
-
+    if(document.querySelector(".current-page") != null) return
     const homePage = document.createElement("div")
     homePage.id = "home-page"
     homePage.classList.add("current-page")

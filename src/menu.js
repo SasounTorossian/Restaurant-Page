@@ -91,6 +91,7 @@ const renderMenuPage = () => {
     if (currentTab != null) currentTab.classList.remove("current-tab")
     document.getElementById("menu-tab").classList.add("current-tab")
 
+    if(document.querySelector(".current-page") != null) return
     const menuPage = document.createElement("div")
     menuPage.id = "menu-page"
     menuPage.classList.add("current-page")
