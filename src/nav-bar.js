@@ -47,7 +47,7 @@ const renderNavBar = () => {
     gitTabLink.href = "https://github.com/SasounTorossian"
     const gitTabImg = document.createElement("img")
     gitTabImg.id = "git-img"
-    gitTabImg.src = "./images/images-nav-bar/Github Logo.png"
+    gitTabImg.src = "./images/images-nav-bar/git-logo.png"
     gitTabImg.height = "60"
     gitTabLink.appendChild(gitTabImg)
     gitTab.appendChild(gitTabLink)
