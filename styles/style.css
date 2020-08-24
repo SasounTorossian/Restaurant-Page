@@ -10,6 +10,7 @@ body, html {
 
 body {
     overflow-y: overlay;
+    background-color: #f4f4f4;
 }
 
 /* CONTENT */
@@ -21,6 +22,10 @@ body {
     /* min-height: 100%; */
 }
 
+/* .current-page {
+    opacity: 1;
+    transition: opacity 1000ms ease-in;
+} */
 
 /* NAV BAR */
 #nav-bar {
@@ -107,7 +112,8 @@ body {
 
 /* HOMEPAGE */
 #home-page {
-    /* min-height: 100%; */
+    margin: 20px;
+    transition: opacity 1s ease-in;
 }
 
 
@@ -170,6 +176,7 @@ h2 {
     justify-content: space-around;
     height: 100%;
     margin: 20px;
+    transition: opacity 1s ease-in;
 }
 
 .menu-header {
@@ -210,6 +217,7 @@ h2 {
     display: flex;
     justify-content: space-around;
     margin: 20px;
+    transition: opacity 1s ease-in;
 }
 
 #contact-details {
@@ -357,4 +365,18 @@ input[type="button"] {
     font-weight: 500;
     font-size: 25px;
     text-align: center;
+}
+
+/* TRANSITION EFFECT */
+.screen-hidden {
+    opacity: 0;
+}
+
+.screen-transition {
+    transition: opacity 1s ease;
+}
+
+.screen-transition.screen-hidden {
+    display: flex;
+    opacity: 1;
 }
