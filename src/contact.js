@@ -312,10 +312,15 @@ const renderContactPage = () => {
     // MAP
     const mapDiv = document.createElement("div")
     mapDiv.id = "contact-map"
+    let url = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBgXyqkZVXE515nBZW12GKBFkf4vEa4-xg&callback=myMap"
 
+    
+    // if(!isGoogleMapScriptLoaded(url)) {
     let script = document.createElement('script');
-    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBgXyqkZVXE515nBZW12GKBFkf4vEa4-xg&callback=myMap"
+    script.src = url
     script.defer = true
+    document.head.appendChild(script)
+    // }
 
     window.myMap = function() {
         let mapProp= {
@@ -343,11 +348,25 @@ const renderContactPage = () => {
             map.addListener('click', () => infowindow.close())
         })
     }
-
-    document.head.appendChild(script)
     contactPage.appendChild(mapDiv)
+    // content.appendChild(contactPage)
+
+
     content.appendChild(contactPage)
+    contactPage.classList.add("screen-hidden")
+    requestAnimationFrame(() => contactPage.classList.remove("screen-hidden"))
 }
+
+// function isGoogleMapScriptLoaded(url) {
+//     let loadedScripts = document.querySelectorAll("script")
+//     loadedScripts.forEach(script => {
+//         console.log(script.src)
+//         console.log(url)
+
+//         if (script.src == url) return true
+//     })
+//     return false
+// }
 
 export {
     renderContactPage

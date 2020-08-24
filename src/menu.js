@@ -139,7 +139,10 @@ const renderMenuPage = () => {
         })
         menuPage.appendChild(menuType)
     }
+    
     content.appendChild(menuPage)
+    menuPage.classList.add("screen-hidden")
+    requestAnimationFrame(() => menuPage.classList.remove("screen-hidden"))
 }
 
 export {

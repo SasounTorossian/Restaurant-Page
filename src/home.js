@@ -107,6 +107,8 @@ const renderHomePage = () => {
     homePage.appendChild(section3)
 
     content.appendChild(homePage)
+    homePage.classList.add("screen-hidden")
+    requestAnimationFrame(() => homePage.classList.remove("screen-hidden"))
 }
 
 export {
