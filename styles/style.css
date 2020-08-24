@@ -22,10 +22,10 @@ body {
     /* min-height: 100%; */
 }
 
-/* .current-page {
+.current-page {
     opacity: 1;
-    transition: opacity 1000ms ease-in;
-} */
+    transition: opacity 500ms ease-in;
+}
 
 /* NAV BAR */
 #nav-bar {
@@ -113,7 +113,7 @@ body {
 /* HOMEPAGE */
 #home-page {
     margin: 20px;
-    transition: opacity 1s ease-in;
+    transition: opacity 500ms ease-in;
 }
 
 
@@ -176,7 +176,7 @@ h2 {
     justify-content: space-around;
     height: 100%;
     margin: 20px;
-    transition: opacity 1s ease-in;
+    transition: opacity 500ms ease-in;
 }
 
 .menu-header {
@@ -217,7 +217,7 @@ h2 {
     display: flex;
     justify-content: space-around;
     margin: 20px;
-    transition: opacity 1s ease-in;
+    transition: opacity 500ms ease-in;
 }
 
 #contact-details {
@@ -359,6 +359,7 @@ input[type="button"] {
 #footer {
     background: #f4f4f4;
     padding: 10px;
+    transition: opacity 500ms ease-in;
 }
   
 #footer p {
@@ -368,6 +369,11 @@ input[type="button"] {
 }
 
 /* TRANSITION EFFECT */
+.parallax-mirror {
+    transition: opacity 500ms ease-in;
+}
+
+
 .screen-hidden {
     opacity: 0;
 }
