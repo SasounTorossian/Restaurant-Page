@@ -49,20 +49,6 @@ body {
     flex: 1;
 }
 
-#git-tab {
-    flex: 1;
-    cursor: pointer;
-    transition: 0.2s ease-in;
-}
-
-#git-tab:hover {
-    background: rgba(240,174,33, 0.5);
-}
-
-#git-link:hover > #git-img {
-    transform: scale(1.1);
-}
-
 .tab {
     display: flex;
     cursor: pointer;
@@ -74,11 +60,17 @@ body {
 }
 
 .tab:not(.current-tab):hover{
-    background: rgba(240,174,33, 0.5);
+    color: rgba(240,174,33, 0.4);
 }
 
 .current-tab {
-    background: rgba(240,174,33, 1);
+    color: rgba(240,174,33, 1);
+}
+
+#git-tab {
+    flex: 1;
+    cursor: pointer;
+    transition: 0.2s ease-in;
 }
 
 #git-link {
@@ -89,19 +81,35 @@ body {
     width: 100%;
 }
 
-
-
 #git-img {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.2s ease-in
+    transition: 0.2s ease-in;
+    border-radius: 50px;
 }
+
+#git-link:hover > #git-img {
+    transform: scale(1.2);
+    background-color: rgba(240,174,33, 0.5);
+}
+
+#git-link:active > #git-img {
+    transform: scale(1.2);
+    background-color: rgba(240,174,33, 1);
+}
+
+#git-link:focus > #git-img {
+    transform: scale(1.2);
+    background-color: rgba(240,174,33, 1);
+}
+
 
 /* HOMEPAGE */
 #home-page {
     /* min-height: 100%; */
 }
+
 
 .pimg1, .pimg2, .pimg3 {
     position: relative;
@@ -138,9 +146,9 @@ h2 {
     top: 50%;
     width: 100%;
     text-align: center;
-    color: white;
-    font-size: 27px;
+    font-size: 29px;
     letter-spacing: 8px;
+    
 }
 
 .ptext .border {
@@ -211,7 +219,7 @@ h2 {
 }
 
 .contact {
-    margin-bottom: 34px;
+    margin-bottom: 32px;
 }
 
 .contact strong{
