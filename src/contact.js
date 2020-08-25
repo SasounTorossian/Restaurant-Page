@@ -234,7 +234,7 @@ const renderContactPage = () => {
     strongTel.textContent = "Telephone:"
     contactTel.appendChild(strongTel)
     const tel = document.createElement("p")
-    tel.textContent = "123456789"  
+    tel.textContent = "+235-665-5512-4"  
     contactTel.appendChild(tel)
     contactInfo.appendChild(contactTel)
 
