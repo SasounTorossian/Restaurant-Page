@@ -1,3 +1,4 @@
+import "jquery-parallax.js"
 import {renderNavBar} from "./nav-bar.js"
 import {renderHomePage} from "./home.js"
 import {renderMenuPage} from "./menu.js"
@@ -6,7 +7,6 @@ import {renderFooter} from "./footer.js"
 
 renderNavBar()
 renderHomePage()
-// renderContactPage()
 renderFooter()
 
 const content = document.getElementById("content")
