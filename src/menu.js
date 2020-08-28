@@ -1,6 +1,7 @@
 const content = document.getElementById("content")
 
-let menu = {
+// Menu for restaurant. Name, ing, and price are contained in each object.
+const menu = {
     starters: [
         {
             "name": "Cactus salad Ⓥ",
@@ -87,16 +88,25 @@ menu-page
 */
 
 const renderMenuPage = () => {
+    // find and remove current-tab class from nav-bar. Add current-tab class to home-tab 
     const currentTab = document.querySelector(".current-tab")
     if (currentTab != null) currentTab.classList.remove("current-tab")
     document.getElementById("menu-tab").classList.add("current-tab")
 
+    /**If current-page class was not removed previously, return
+     * else, create new home page and add current-page class to it
+     */
     if(document.querySelector(".current-page") != null) return
     const menuPage = document.createElement("div")
     menuPage.id = "menu-page"
     menuPage.classList.add("current-page")
 
+    // Get each type of dish in menu, and created a header for it
     for (let type in menu) {
+        /**Convert first letter of type string to uppercase. 
+         * this is done to keep the type string lowercase in order
+         * to be consistent with id naming conventions
+         */ 
         let typeUppercase = type.charAt(0).toUpperCase() + type.slice(1)
         
         const menuType = document.createElement("div")
@@ -107,6 +117,7 @@ const renderMenuPage = () => {
         menuTypeP.classList.add("menu-header")
         menuType.appendChild(menuTypeP)
         
+        // Create page by iterating over dishes in each type
         menu[type].forEach(dish => {
             const menuItem = document.createElement("div")
             menuItem.classList.add("menu-item")
@@ -141,6 +152,11 @@ const renderMenuPage = () => {
         menuPage.appendChild(menuType)
     }
     
+    /**Append current page to content div. 
+     * Add screen-hidden class to current page to hide it first, 
+     * then allow it to transition in over 500ms.
+     * When animation is finished, remove screen-hidden class from current page.
+     */
     content.appendChild(menuPage)
     menuPage.classList.add("screen-hidden")
     requestAnimationFrame(() => menuPage.classList.remove("screen-hidden"))

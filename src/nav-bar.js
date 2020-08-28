@@ -1,9 +1,16 @@
 const content = document.getElementById("content")
 
+const tabs = [
+    "home",
+    "menu",
+    "contact"
+]
+
 const renderNavBar = () => {
     const navBar = document.createElement("div")
     navBar.id = "nav-bar"
 
+    // Create nav bar html elements once by one.
     const navBarLogo = document.createElement("div")
     navBarLogo.id = "nav-bar-logo"
     const navBarLogoImg = document.createElement("img")
@@ -16,32 +23,21 @@ const renderNavBar = () => {
     navBarLogoTitle.textContent = "le Désert Aride"
     navBarLogoTitle.classList.add("logo-title")
     navBarLogo.appendChild(navBarLogoTitle)
-
     navBar.appendChild(navBarLogo)
 
+    // Create tabs with uppercase text
+    tabs.forEach(tab => {
+        const tabUppercase = tab.charAt(0).toUpperCase() + tab.slice(1)
+        const tabDiv = document.createElement("div")
+        tabDiv.id = `${tab}-tab`
+        tabDiv.classList.add("tab")
+        tabDiv.textContent = tabUppercase
+        navBar.appendChild(tabDiv)
+    })
 
-
-    const homeTab = document.createElement("div")
-    homeTab.id = "home-tab"
-    homeTab.classList.add("tab")
-    homeTab.textContent = "Home"
-    navBar.appendChild(homeTab)
-
-    const menuTab = document.createElement("div")
-    menuTab.id = "menu-tab"
-    menuTab.classList.add("tab")
-    menuTab.textContent = "Menu"
-    navBar.appendChild(menuTab)
-
-    const contactTab = document.createElement("div")
-    contactTab.id = "contact-tab"
-    contactTab.classList.add("tab")
-    contactTab.textContent = "Contact Us"
-    navBar.appendChild(contactTab)
-
+    // Create git link
     const gitTab = document.createElement("div")
     gitTab.id = "git-tab"
-    // gitTab.classList.add("tab")
     const gitTabLink = document.createElement("a")
     gitTabLink.id = "git-link"
     gitTabLink.href = "https://github.com/SasounTorossian"

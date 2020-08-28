@@ -1,5 +1,6 @@
 const content = document.getElementById("content")
 
+// sections which include image source, image text, header and sections text
 const sections = [
     {
         "img": "./images/images-home-page/desert-1.jpg", 
@@ -23,15 +24,21 @@ const sections = [
 ]
 
 const renderHomePage = () => {
+    // find and remove current-tab class from nav-bar. Add current-tab class to home-tab 
     const currentTab = document.querySelector(".current-tab")
     if (currentTab != null) currentTab.classList.remove("current-tab")
     document.getElementById("home-tab").classList.add("current-tab")
 
+    /**If current-page class was not removed previously, return
+     * else, create new home page and add current-page class to it
+     */
     if(document.querySelector(".current-page") != null) return
     const homePage = document.createElement("div")
     homePage.id = "home-page"
     homePage.classList.add("current-page")
 
+    /* Create sections based off "sections" array of objects.
+        Initially add parallax data to each image for effect*/ 
     sections.forEach((sec, index) => {
         const pimg = document.createElement("div")
         pimg.classList.add(`pimg${index+1}`)
@@ -66,6 +73,11 @@ const renderHomePage = () => {
 
     })
 
+    /**Append current page to content div. 
+     * Add screen-hidden class to currentpage to hide it first, 
+     * then allow it to transition in over 500ms.
+     * When animation is finished, remove screen-hidden class from current page.
+     */
     content.appendChild(homePage)
     homePage.classList.add("screen-hidden")
     requestAnimationFrame(() => homePage.classList.remove("screen-hidden"))

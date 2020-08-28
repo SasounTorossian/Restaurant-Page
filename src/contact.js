@@ -1,6 +1,7 @@
 const content = document.getElementById("content")
 
-let addresses = [
+// Addresses for contact.
+const addresses = [
     "Saharah Desert",
     "Gobi Desert",
     "Mojave  Desert",
@@ -10,13 +11,15 @@ let addresses = [
     "Great Victoria Desert"
 ]
 
-let formInputs = [
+// Inputs for forms, can be changed.
+const formInputs = [
     "Name",
     "Email",
     "Phone"
 ]
 
-let deserts = [
+// List of deserts of google maps. Includes lat/lng and information.
+const deserts = [
     {
         "name": "Sahara Desert", 
         "lat": 23, 
@@ -175,15 +178,20 @@ let deserts = [
 
 
 const renderContactPage = () => {
+    // find and remove current-tab class from nav-bar. Add current-tab class to home-tab 
     const currentTab = document.querySelector(".current-tab")
     if (currentTab != null) currentTab.classList.remove("current-tab")
     document.getElementById("contact-tab").classList.add("current-tab")
 
+    /**If current-page class was not removed previously, return
+     * else, create new home page and add current-page class to it
+     */
     if(document.querySelector(".current-page") != null) return
     const contactPage = document.createElement("div")
     contactPage.id = "contact-page"
     contactPage.classList.add("current-page")
 
+    // Start creating html sctructure for contact page.
     const contactDetails = document.createElement("div")
     contactDetails.id = "contact-details"
     contactPage.appendChild(contactDetails)
@@ -227,7 +235,6 @@ const renderContactPage = () => {
     contactEmail.appendChild(Email)
     contactInfo.appendChild(contactEmail)
 
-
     const contactTel = document.createElement("div")
     contactTel.classList.add("contact")
     const strongTel = document.createElement("strong")
@@ -239,7 +246,7 @@ const renderContactPage = () => {
     contactInfo.appendChild(contactTel)
 
 
-    // FORM
+    // Create form input on contact page.
     const form = document.createElement("form")
     form.id = "contact-form"
     const contact = document.createElement("strong")
@@ -292,7 +299,6 @@ const renderContactPage = () => {
     inputBoxText.appendChild(span_2)
     form.appendChild(formDivText)
 
-
     const formDivSub = document.createElement("form")
     formDivSub.classList.add("form-div")
     const inputSub = document.createElement("input")
@@ -301,33 +307,37 @@ const renderContactPage = () => {
     formDivSub.appendChild(inputSub)
     form.appendChild(formDivSub)
 
+    // On pressing submit button, clear the form.
     inputSub.addEventListener('click', (e) => {
         let frm = document.querySelector("#contact-form")
         frm.reset()
-        return false
     })
 
     contactDetails.appendChild(form)
 
 
-    // MAP
+    // Code for embedded google map.
     const mapDiv = document.createElement("div")
     mapDiv.id = "contact-map"
 
+    // Find all google apis, remove them, and reload them.
     removeGoogleMapScript()
     addGoogleMapScript()
 
     window.myMap = function() {
-        let mapProp= {
+        // Map zoom level and position
+        let mapCenter= {
             zoom: 1.3,
             center: new google.maps.LatLng(0,0),
         }
 
+        // Create map object with correct center and zoom
         let map = new google.maps.Map(
             document.getElementById("contact-map"), 
-            mapProp
+            mapCenter
         )
 
+        // Create markers for each desert object.
         deserts.forEach(desert => {
             const marker = new google.maps.Marker({
                 position: {lat: desert.lat, lng: desert.lng},
@@ -335,35 +345,31 @@ const renderContactPage = () => {
                 title: desert.name
             })
             
+            // create info window on markers containg desert information
             const infowindow = new google.maps.InfoWindow({
                 content: desert.info
             });
 
+            // Reveal info window if clicking on marker, remove if clicking on map
             marker.addListener('click', () => infowindow.open(map, marker))
             map.addListener('click', () => infowindow.close())
         })
     }
     contactPage.appendChild(mapDiv)
-    // content.appendChild(contactPage)
 
-
+    /**Append current page to content div. 
+     * Add screen-hidden class to currentpage to hide it first, 
+     * then allow it to transition in over 500ms.
+     * When animation is finished, remove screen-hidden class from current page.
+     */
     content.appendChild(contactPage)
     contactPage.classList.add("screen-hidden")
     requestAnimationFrame(() => contactPage.classList.remove("screen-hidden"))
 }
 
-function isGoogleMapScriptLoaded(url) {
-    let loadedScripts = document.querySelectorAll("script")
-
-    for (let i = loadedScripts.length; i--;) {
-        if (loadedScripts[i].src === url) {
-            loadedScripts[i].parentNode.removeChild(loadedScripts[i])
-            // return true
-        }
-    }
-    // return false
-}
-
+/**Removes all traced of google api from html in order to prevent
+ * multiple loads of the api, which could cause issues later on.
+ */
 function removeGoogleMapScript() {
     let keywords = ['maps.googleapis']
 
@@ -382,9 +388,13 @@ function removeGoogleMapScript() {
     }
 }
 
+/**Create google api url using api key.
+ * Set source of script to url, and defer until html is loaded.
+ */
 function addGoogleMapScript() {
-    let url = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBgXyqkZVXE515nBZW12GKBFkf4vEa4-xg&callback=myMap"
-    let script = document.createElement('script');
+    const key = "AIzaSyBgXyqkZVXE515nBZW12GKBFkf4vEa4-xg"
+    const url = `https://maps.googleapis.com/maps/api/js?key=${key}&callback=myMap`
+    const script = document.createElement('script');
     script.src = url
     script.defer = true
     document.head.appendChild(script)
