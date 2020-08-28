@@ -6,4 +6,4 @@ on the homepage too. Menu page is nice and simple and happy with the way the men
 due to pardoy nature of dishes, options would be limited for images. Contact page was for experimenting with google maps and pretty happy with the results. Used
 online tutorials to figure out how to animate form, but still don't understand it completely.
 
-In the future would like to implement more features and find a more efficient way of loading/removing webpages.
+In the future would like to implement more features and find a more efficient way of loading/removing webpages. Fading effects for switching between tabs is very much duct-tape and chewing gum, and would prefer to have a single module or library responsible for controlling fading effects.
