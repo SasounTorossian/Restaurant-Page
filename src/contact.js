@@ -221,7 +221,7 @@ const renderContactPage = () => {
     time_1.textContent = "Lunch: 11:30am - 2:30pm"  
     contactTime.appendChild(time_1)
     const time_2 = document.createElement("p")
-    time_2.textContent = "Dinner, 5:30pm - 11:00pm"  
+    time_2.textContent = "Dinner: 5:30pm - 11:00pm"  
     contactTime.appendChild(time_2)
     contactInfo.appendChild(contactTime)
 
