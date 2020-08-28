@@ -9,7 +9,7 @@ const menu = {
             "price": "7"
         },
         {
-            "name": "Toasted Arizona desert hairy scorpion",
+            "name": "Toasted Arizona Desert hairy scorpion",
             "ing": "Three large hadrurus arizonensis scorpions harvested from the Mojave Desert toasted until golden brown, served with a small side of desert turf grass.",
             "price": "8"
         },
@@ -38,7 +38,7 @@ const menu = {
         },
 
         {
-            "name": "Bactrian camel Kabsa",
+            "name": "Bactrian camel kabsa",
             "ing": "A 250g cut of Camelus bactrianus loin imported from the Gobi Desert, marinated in spices and grilled over a fire. Served with 350g of rice.",
             "price": "20"
         },
